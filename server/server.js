@@ -13,6 +13,26 @@ const port=process.env.PORT || 3000;
 
   io.on('connection',(socket)=>{
     console.log('New user connected');
+
+    // socket.emit('newEmail',{
+    //   from: 'h@gmail.com',
+    //   text: 'hi, are you mad',
+    //   createdAt: 123
+    // });
+    socket.emit('newMessage',{
+        from: 'Iqbal',
+        text: 'See you then, from server',
+        createdAt: 123123
+    });
+
+    socket.on('createMessage',(message)=>{
+      console.log('createMessage',message);
+    });
+    // socket.on('createEmail',(newEmail)=>{
+    //   console.log('createEmail',newEmail);
+    // });
+
+
     socket.on('disconnect',()=>{
       console.log('User was disconnected');
     });
