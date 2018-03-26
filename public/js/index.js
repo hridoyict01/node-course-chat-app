@@ -8,10 +8,14 @@ socket.on('connect', function () {
 //    to: 'i@gmail.com',
 //    text: 'from client to server'
 //  })
-    socket.emit('createMessage',{
-      from:'Hridoy',
-      text:'That works for me'
-    });
+    // socket.emit('createMessage',{
+    //   from:'Hridoy',
+    //   text:'That works for me'
+    // });
+
+
+
+
   });
 
 

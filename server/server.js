@@ -19,14 +19,19 @@ const port=process.env.PORT || 3000;
     //   text: 'hi, are you mad',
     //   createdAt: 123
     // });
-    socket.emit('newMessage',{
-        from: 'Iqbal',
-        text: 'See you then, from server',
-        createdAt: 123123
-    });
+    // socket.emit('newMessage',{
+    //     from: 'Iqbal',
+    //     text: 'See you then, from server',
+    //     createdAt: 123123
+    // });
 
     socket.on('createMessage',(message)=>{
       console.log('createMessage',message);
+      io.emit('newMessage',{
+        from: message.from,
+        text: message.text,
+        createdAt: new Date().getTime()
+      });
     });
     // socket.on('createEmail',(newEmail)=>{
     //   console.log('createEmail',newEmail);
