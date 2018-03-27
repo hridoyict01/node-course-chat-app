@@ -12,10 +12,6 @@ socket.on('connect', function () {
     //   from:'Hridoy',
     //   text:'That works for me'
     // });
-
-
-
-
   });
 
 
